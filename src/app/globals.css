@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 Theme Tokens ── */
+@theme {
+  --color-dark: #050708;
+  --color-emerald-brand: #1C422D;
+  --color-emerald-light: #2A6142;
+  --color-emerald-glow: rgba(39, 93, 63, 0.35);
+  --color-champagne: #E5D1B1;
+  --color-champagne-glow: rgba(229, 209, 177, 0.25);
+  --color-platinum: #E4E6E7;
+
+  --font-sans: var(--font-bestigia), Georgia, 'Times New Roman', serif;
+
+  --animate-hero-fade: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(1.04);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+}
+
+/* ── Base Resets ── */
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-dark);
+    color: var(--color-platinum);
+    font-family: var(--font-sans);
+  }
+
+  body {
+    background-color: var(--color-dark);
+    color: var(--color-platinum);
+    overflow-x: hidden;
+    min-height: 100vh;
+    min-height: 100svh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+}
+
+/* ── Component Classes ── */
+@layer components {
+  /* Display typography — tighter tracking for headings */
+  .font-display {
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  /* Ghost Button — Champagne */
+  .btn-ghost-champagne {
+    @apply inline-flex items-center justify-center gap-2.5
+           py-3.5 px-8 text-xs font-semibold uppercase
+           rounded-full cursor-pointer whitespace-nowrap
+           transition-all duration-300 ease-out;
+    letter-spacing: 0.15em;
+    color: var(--color-champagne);
+    background: transparent;
+    border: 1px solid var(--color-champagne);
+    text-decoration: none;
+  }
+
+  .btn-ghost-champagne:hover {
+    background: var(--color-champagne);
+    color: var(--color-dark);
+    box-shadow: 0 0 22px var(--color-champagne-glow);
+    transform: translateY(-1px);
+  }
+
+  /* Ghost Button — White */
+  .btn-ghost-white {
+    @apply inline-flex items-center justify-center gap-2.5
+           py-3.5 px-8 text-xs font-semibold uppercase
+           rounded-full cursor-pointer whitespace-nowrap
+           transition-all duration-300 ease-out;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+
+  .btn-ghost-white:hover {
+    background: #FFFFFF;
+    color: var(--color-dark);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Solid Button — Emerald */
+  .btn-solid-emerald {
+    @apply inline-flex items-center justify-center gap-2.5
+           py-3.5 px-8 text-xs font-semibold uppercase
+           rounded-full cursor-pointer whitespace-nowrap
+           transition-all duration-300 ease-out;
+    letter-spacing: 0.15em;
+    color: var(--color-champagne);
+    background: var(--color-emerald-brand);
+    border: 1px solid var(--color-emerald-light);
+    text-decoration: none;
+  }
+
+  .btn-solid-emerald:hover {
+    background: var(--color-emerald-light);
+    box-shadow: 0 0 24px var(--color-emerald-glow);
+    transform: translateY(-1px);
+  }
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(229, 209, 177, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne);
+}
