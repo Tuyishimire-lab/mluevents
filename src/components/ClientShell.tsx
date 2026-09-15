@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import SplitShowcase from "@/components/SplitShowcase";
+import ProductionGallery from "@/components/ProductionGallery";
 import EcosystemGrid from "@/components/EcosystemGrid";
 import BookingModal from "@/components/BookingModal";
 
@@ -29,7 +30,7 @@ export default function ClientShell({
 
       <SplitShowcase onOpenBooking={() => setIsBookingOpen(true)} />
 
-      {/* More server-rendered content could go here */}
+      <ProductionGallery onOpenBooking={() => setIsBookingOpen(true)} />
 
       <EcosystemGrid onOpenBooking={() => setIsBookingOpen(true)} />
 

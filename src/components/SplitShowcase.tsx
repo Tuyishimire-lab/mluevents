@@ -1,12 +1,68 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface SplitShowcaseProps {
   onOpenBooking: () => void;
 }
 
+const weddingImages = [
+  {
+    src: "/images/showcase-gusaba.webp",
+    alt: "Luxury Rwandan Wedding and Gusaba",
+    caption: "Traditional Gusaba Ceremony",
+  },
+  {
+    src: "/images/hero-wedding.webp",
+    alt: "Bespoke White Wedding Reception",
+    caption: "Grand Reception Styling",
+  },
+];
+
+const corporateImages = [
+  {
+    src: "/images/SPARK 20 LAUNCH I.jpg",
+    alt: "TECNO Spark 20 Launch Main Stage",
+    caption: "TECNO Spark 20 Launch Stage",
+  },
+  {
+    src: "/images/SPARK 20 LAUNCH II.jpg",
+    alt: "TECNO Spark 20 Lighting and Acoustics",
+    caption: "Concert Lighting & Truss Rig",
+  },
+  {
+    src: "/images/SPARK 20 LAUNCH III.jpg",
+    alt: "TECNO Spark 20 Brand Experience",
+    caption: "Executive Brand Activation",
+  },
+  {
+    src: "/images/showcase-gala.webp",
+    alt: "Corporate Gala and Executive Summit",
+    caption: "Continental Summit Forum",
+  },
+];
+
 export default function SplitShowcase({ onOpenBooking }: SplitShowcaseProps) {
+  const [currentWed, setCurrentWed] = useState(0);
+  const [currentCorp, setCurrentCorp] = useState(0);
+
+  // Subtle auto-rotation for corporate photos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentCorp((prev) => (prev + 1) % corporateImages.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  // Subtle auto-rotation for wedding photos
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentWed((prev) => (prev + 1) % weddingImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative scroll-mt-20">
       {/* WEDDINGS: Champagne Section */}
@@ -19,7 +75,7 @@ export default function SplitShowcase({ onOpenBooking }: SplitShowcaseProps) {
             </h2>
             <p className="text-xs sm:text-sm md:text-base text-[#1C422D]/60 font-light leading-relaxed px-2">
               From intimate traditional Rwandan ceremonies to continental business
-              forums, we manage every facet of production with obsessive care.
+              forums and tech launches, we manage every facet of production with obsessive care.
             </p>
           </div>
 
@@ -27,15 +83,42 @@ export default function SplitShowcase({ onOpenBooking }: SplitShowcaseProps) {
             id="weddings"
             className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-center scroll-mt-24"
           >
-            {/* Image */}
-            <div className="relative aspect-[4/3] sm:aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden group">
-              <Image
-                src="/images/showcase-gusaba.webp"
-                alt="Luxury Rwandan Wedding and Gusaba"
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            {/* Wedding Image Frame */}
+            <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden group shadow-2xl">
+              {weddingImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    idx === currentWed ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 text-white text-xs font-medium tracking-wide drop-shadow">
+                    {img.caption}
+                  </div>
+                </div>
+              ))}
+
+              {/* Minimal dots inside photo */}
+              <div className="absolute bottom-3 right-4 z-20 flex items-center gap-1.5">
+                {weddingImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentWed(idx)}
+                    className={`transition-all duration-300 rounded-full ${
+                      idx === currentWed ? "w-5 h-1 bg-white" : "w-1.5 h-1 bg-white/40"
+                    }`}
+                    aria-label={`View wedding image ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Content */}
@@ -77,13 +160,12 @@ export default function SplitShowcase({ onOpenBooking }: SplitShowcaseProps) {
                 Corporate Affairs
               </span>
               <h3 className="font-display text-xl sm:text-2xl md:text-4xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                Executive Summits & Institutional Galas
+                Executive Summits & Flagship Launches
               </h3>
               <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed mb-6 sm:mb-10">
                 Kigali is Africa&apos;s premier summit destination. We equip
-                corporations, multinationals, and embassies with executive
-                production capabilities, delivering high-level forums that command
-                respect.
+                leading technology enterprises (including the TECNO Spark and Camon launch series),
+                multinationals, and embassies with executive production capabilities that command respect.
               </p>
 
               <button
@@ -94,15 +176,42 @@ export default function SplitShowcase({ onOpenBooking }: SplitShowcaseProps) {
               </button>
             </div>
 
-            {/* Image */}
-            <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden group order-1 lg:order-2">
-              <Image
-                src="/images/showcase-gala.webp"
-                alt="Corporate Gala and Executive Summit"
-                fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            {/* Corporate Image Frame with Spark 20 Launch Photos */}
+            <div className="relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden group order-1 lg:order-2 shadow-2xl">
+              {corporateImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    idx === currentCorp ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 text-white text-xs font-medium tracking-wide drop-shadow">
+                    {img.caption}
+                  </div>
+                </div>
+              ))}
+
+              {/* Minimal dots inside photo */}
+              <div className="absolute bottom-3 right-4 z-20 flex items-center gap-1.5">
+                {corporateImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentCorp(idx)}
+                    className={`transition-all duration-300 rounded-full ${
+                      idx === currentCorp ? "w-5 h-1 bg-white" : "w-1.5 h-1 bg-white/40"
+                    }`}
+                    aria-label={`View corporate image ${idx + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>

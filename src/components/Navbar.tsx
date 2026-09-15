@@ -43,7 +43,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
           <div className="relative w-8 h-8 md:w-10 md:h-10 transition-transform duration-300 group-hover:scale-105">
             <Image
-              src="/brand/mlu-logo-gold.png"
+              src="/brand/mlu-logo-white.png"
               alt="MLU Events"
               fill
               className="object-contain"
@@ -51,7 +51,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
               priority
             />
           </div>
-          <span className="font-display text-base md:text-xl font-bold tracking-[0.2em] text-[#E5D1B1] uppercase leading-none">
+          <span className="font-display text-base md:text-xl font-bold tracking-[0.2em] text-white uppercase leading-none">
             MLU
           </span>
         </Link>
@@ -69,6 +69,12 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
             className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
           >
             Corporate
+          </Link>
+          <Link
+            href="#portfolio"
+            className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
+          >
+            Portfolio
           </Link>
           <Link
             href="#morals"
@@ -128,6 +134,9 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </Link>
         <Link href="#corporate" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
           Corporate
+        </Link>
+        <Link href="#portfolio" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
+          Portfolio
         </Link>
         <Link href="#morals" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
           Our Story
