@@ -1,65 +1,182 @@
-import Image from "next/image";
+"use client";
 
-export default function Footer() {
+import Image from "next/image";
+import Link from "next/link";
+
+interface FooterProps {
+  onOpenBooking?: () => void;
+}
+
+export default function Footer({ onOpenBooking }: FooterProps) {
   return (
-    <footer id="contact" className="bg-[#E5D1B1] py-12 sm:py-16 md:py-20">
+    <footer id="contact" className="bg-[#050708] border-t border-white/10 pt-16 sm:pt-20 md:pt-24 pb-12 text-[#E4E6E7] scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
-        {/* Row 1: Logo + Contact */}
-        <div className="flex flex-col items-center gap-6 sm:gap-8 mb-8 sm:mb-12 md:flex-row md:justify-between">
-          <div className="flex items-center gap-3">
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9">
-              <Image
-                src="/brand/mlu-logo-gold.png"
-                alt="MLU Events"
-                fill
-                className="object-contain"
-                sizes="36px"
-              />
+        {/* Main 4-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 mb-16 sm:mb-20">
+          {/* Column 1 & 2: Brand Profile */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
+              <div className="relative w-8 h-8 sm:w-9 sm:h-9">
+                <Image
+                  src="/brand/mlu-logo-white.png"
+                  alt="MLU Events"
+                  fill
+                  className="object-contain"
+                  sizes="36px"
+                />
+              </div>
+              <span className="font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-white uppercase">
+                MLU EVENTS LTD
+              </span>
+            </Link>
+            <p className="text-xs sm:text-sm text-white/60 font-light max-w-sm leading-relaxed mb-6">
+              Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.
+            </p>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://wa.me/250787742477"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[11px] tracking-wider uppercase text-white bg-[#1C422D] border border-[#1C422D] rounded-full px-5 py-2.5 hover:bg-[#25573B] transition-all font-medium inline-flex items-center gap-2"
+              >
+                <span>Chat on WhatsApp</span>
+              </a>
             </div>
-            <span className="font-display text-base sm:text-lg font-bold tracking-[0.2em] text-[#1C422D] uppercase">
-              MLU Events
-            </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-8 text-xs text-[#1C422D]/60">
-            <a href="tel:+250787742477" className="hover:text-[#1C422D] transition-colors">
-              +250 787 742 477
-            </a>
-            <a href="mailto:mlueventsrw@gmail.com" className="hover:text-[#1C422D] transition-colors">
-              mlueventsrw@gmail.com
-            </a>
-            <span>Kigali, Rwanda</span>
+          {/* Column 3: Explore */}
+          <div>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#E5D1B1] font-semibold mb-4 sm:mb-5 block">
+              Explore
+            </span>
+            <ul className="space-y-2.5 text-xs text-white/70 font-light">
+              <li>
+                <Link href="#home" className="hover:text-[#E5D1B1] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link href="#about" className="hover:text-[#E5D1B1] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="#services" className="hover:text-[#E5D1B1] transition-colors">
+                  Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="#work" className="hover:text-[#E5D1B1] transition-colors">
+                  Our Work
+                </Link>
+              </li>
+              <li>
+                <Link href="#approach" className="hover:text-[#E5D1B1] transition-colors">
+                  Our Approach
+                </Link>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={onOpenBooking}
+                  className="hover:text-[#E5D1B1] transition-colors cursor-pointer text-left"
+                >
+                  Contact & Inquiries
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Services & Developing */}
+          <div>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#E5D1B1] font-semibold mb-4 sm:mb-5 block">
+              Services
+            </span>
+            <ul className="space-y-2.5 text-xs text-white/70 font-light mb-6">
+              <li>
+                <Link href="#services" className="hover:text-[#E5D1B1] transition-colors">
+                  Social Events
+                </Link>
+              </li>
+              <li>
+                <Link href="#corporate" className="hover:text-[#E5D1B1] transition-colors">
+                  Corporate Events
+                </Link>
+              </li>
+            </ul>
+
+            <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold mb-3 block">
+              Developing
+            </span>
+            <ul className="space-y-2 text-[11px] text-white/50 font-light">
+              <li>Fashion Atelier</li>
+              <li>Photo & Video Studio</li>
+              <li>Outside Catering</li>
+              <li>Venue Rental</li>
+            </ul>
+          </div>
+
+          {/* Column 5: Connect */}
+          <div>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-[#E5D1B1] font-semibold mb-4 sm:mb-5 block">
+              Connect
+            </span>
+            <div className="space-y-3 text-xs text-white/70 font-light">
+              <p>Kigali, Rwanda</p>
+              <p>
+                <a href="tel:+250787742477" className="hover:text-[#E5D1B1] transition-colors">
+                  +250 787 742 477
+                </a>
+              </p>
+              <p>
+                <a href="mailto:info@mluevents.rw" className="hover:text-[#E5D1B1] transition-colors">
+                  info@mluevents.rw
+                </a>
+              </p>
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href="https://instagram.com/mluevents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E5D1B1] transition-colors"
+                >
+                  Instagram
+                </a>
+                <span className="text-white/20">•</span>
+                <a
+                  href="https://tiktok.com/@mluevents1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E5D1B1] transition-colors"
+                >
+                  TikTok
+                </a>
+                <span className="text-white/20">•</span>
+                <a
+                  href="https://wa.me/250787742477"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#E5D1B1] transition-colors"
+                >
+                  WhatsApp
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="h-px bg-[#1C422D]/15 mb-8 sm:mb-10" />
+        <div className="h-px bg-white/10 mb-8" />
 
-        {/* Row 2: Links + Social */}
-        <div className="flex flex-col items-center gap-5 sm:gap-6 mb-8 sm:mb-10 sm:flex-row sm:justify-between">
-          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-[#1C422D]/60">
-            <span className="hover:text-[#1C422D] cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-[#1C422D] cursor-pointer transition-colors">Terms</span>
-            <span className="hover:text-[#1C422D] cursor-pointer transition-colors">Contact</span>
-          </div>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <span className="text-[10px] sm:text-xs tracking-[0.15em] text-[#1C422D]/50 uppercase">Follow Us</span>
-            <a href="https://instagram.com/mluevents" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-[#1C422D]/20 flex items-center justify-center text-[#1C422D]/50 hover:text-[#1C422D] hover:border-[#1C422D]/50 transition-all text-xs active:scale-90">
-              IG
-            </a>
-            <a href="https://tiktok.com/@mluevents1" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-[#1C422D]/20 flex items-center justify-center text-[#1C422D]/50 hover:text-[#1C422D] hover:border-[#1C422D]/50 transition-all text-xs active:scale-90">
-              TK
-            </a>
-            <a href="https://wa.me/250787742477" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full border border-[#1C422D]/20 flex items-center justify-center text-[#1C422D]/50 hover:text-[#1C422D] hover:border-[#1C422D]/50 transition-all text-xs active:scale-90">
-              WA
-            </a>
+        {/* Bottom Legal Row */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/40">
+          <p>© 2026 MLU Events Ltd. All Rights Reserved.</p>
+          <div className="flex items-center gap-4">
+            <span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
+            <span>•</span>
+            <span className="hover:text-white transition-colors cursor-pointer">Terms & Conditions</span>
           </div>
         </div>
-
-        {/* Copyright */}
-        <p className="text-center text-[10px] sm:text-[11px] text-[#1C422D]/40">
-          &copy; {new Date().getFullYear()} MLU Events Ltd. All rights reserved.
-        </p>
       </div>
     </footer>
   );

@@ -9,16 +9,16 @@ export default function MetricsStrip() {
   ];
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-[#050708]">
+    <section className="py-16 sm:py-20 md:py-24 bg-[#F7F3EC] border-y border-[#E5D1B1]/40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 md:gap-16">
           {metrics.map((m, idx) => (
             <FadeIn key={idx} delay={idx * 100}>
               <div className="text-center">
-                <span className="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-[#E5D1B1] tracking-tight block">
+                <span className="font-display text-3xl sm:text-5xl md:text-6xl font-bold text-[#1C422D] tracking-tight block">
                   {m.value}
                 </span>
-                <span className="text-[10px] sm:text-xs tracking-[0.15em] text-white/50 uppercase mt-2 sm:mt-3 block">
+                <span className="text-[11px] sm:text-xs tracking-[0.18em] text-[#444444] uppercase mt-2 sm:mt-3 font-medium block">
                   {m.label}
                 </span>
               </div>

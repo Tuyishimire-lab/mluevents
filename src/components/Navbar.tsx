@@ -57,30 +57,36 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-12">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-10">
           <Link
-            href="#weddings"
-            className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
+            href="#about"
+            className="text-xs lg:text-sm tracking-[0.1em] text-white hover:text-[#E5D1B1] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]"
           >
-            Weddings
+            About
           </Link>
           <Link
-            href="#corporate"
-            className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
+            href="#services"
+            className="text-xs lg:text-sm tracking-[0.1em] text-white hover:text-[#E5D1B1] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]"
           >
-            Corporate
+            Services
           </Link>
           <Link
-            href="#portfolio"
-            className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
+            href="#work"
+            className="text-xs lg:text-sm tracking-[0.1em] text-white hover:text-[#E5D1B1] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]"
           >
-            Portfolio
+            Our Work
           </Link>
           <Link
-            href="#morals"
-            className="text-sm tracking-[0.1em] text-white/80 hover:text-[#E5D1B1] transition-colors"
+            href="#approach"
+            className="text-xs lg:text-sm tracking-[0.1em] text-white hover:text-[#E5D1B1] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]"
           >
-            Our Story
+            Our Approach
+          </Link>
+          <Link
+            href="#why-mlu"
+            className="text-xs lg:text-sm tracking-[0.1em] text-white hover:text-[#E5D1B1] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)]"
+          >
+            Why MLU
           </Link>
         </nav>
 
@@ -88,7 +94,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         <div className="hidden md:block">
           <button
             onClick={onOpenBooking}
-            className="text-sm tracking-[0.1em] text-[#E5D1B1] border border-[#E5D1B1]/50 rounded-full px-6 py-2 hover:bg-[#E5D1B1] hover:text-[#050708] transition-all duration-300"
+            className="text-xs lg:text-sm tracking-[0.1em] text-[#E5D1B1] border border-[#E5D1B1]/50 rounded-full px-6 py-2 hover:bg-[#E5D1B1] hover:text-[#050708] transition-all duration-300 uppercase font-medium cursor-pointer"
           >
             Contact
           </button>
@@ -97,7 +103,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#E5D1B1] hover:text-white transition-colors"
+          className="md:hidden p-2 text-white hover:text-[#E5D1B1] transition-colors cursor-pointer"
           aria-label="Toggle Navigation"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +118,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Mobile Fullscreen Drawer */}
       <div
-        className={`md:hidden fixed inset-0 top-0 bg-[#050708] z-40 flex flex-col items-center justify-center gap-10 transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 top-0 bg-[#050708] z-40 flex flex-col items-center justify-center gap-8 transition-all duration-300 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -129,21 +135,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </svg>
         </button>
 
-        <Link href="#weddings" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
-          Weddings
+        <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="text-xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors uppercase">
+          About
         </Link>
-        <Link href="#corporate" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
-          Corporate
+        <Link href="#services" onClick={() => setMobileMenuOpen(false)} className="text-xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors uppercase">
+          Services
         </Link>
-        <Link href="#portfolio" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
-          Portfolio
+        <Link href="#work" onClick={() => setMobileMenuOpen(false)} className="text-xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors uppercase">
+          Our Work
         </Link>
-        <Link href="#morals" onClick={() => setMobileMenuOpen(false)} className="text-2xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors">
-          Our Story
+        <Link href="#approach" onClick={() => setMobileMenuOpen(false)} className="text-xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors uppercase">
+          Our Approach
+        </Link>
+        <Link href="#why-mlu" onClick={() => setMobileMenuOpen(false)} className="text-xl tracking-[0.15em] text-white hover:text-[#E5D1B1] transition-colors uppercase">
+          Why MLU
         </Link>
         <button
           onClick={() => { setMobileMenuOpen(false); onOpenBooking(); }}
-          className="mt-4 text-sm tracking-[0.1em] text-[#E5D1B1] border border-[#E5D1B1]/50 rounded-full px-10 py-3.5 hover:bg-[#E5D1B1] hover:text-[#050708] transition-all duration-300"
+          className="mt-4 text-xs tracking-[0.1em] text-[#E5D1B1] border border-[#E5D1B1]/50 rounded-full px-10 py-3.5 hover:bg-[#E5D1B1] hover:text-[#050708] transition-all duration-300 uppercase font-medium cursor-pointer"
         >
           Contact
         </button>
