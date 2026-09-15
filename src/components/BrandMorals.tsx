@@ -104,7 +104,7 @@ export default function BrandMorals() {
               The Geometric Imigongo Heritage
             </h3>
             <p className="text-sm sm:text-base text-[#555555] leading-relaxed font-light px-2">
-              Each of the handmade elements in the MLU insignia was intentionally sculpted to reflect the ancient geometry of Rwandan Imigongo art — a modern tribute to our heritage translated for the world stage.
+              Each of the handmade elements in the MLU insignia was intentionally sculpted to reflect the ancient geometry of Rwandan Imigongo art, a modern tribute to our heritage translated for the world stage.
             </p>
           </div>
         </FadeIn>

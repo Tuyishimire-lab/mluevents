@@ -129,8 +129,8 @@ export default function Footer({ onOpenBooking }: FooterProps) {
                 </a>
               </p>
               <p>
-                <a href="mailto:info@mluevents.rw" className="hover:text-[#E5D1B1] transition-colors">
-                  info@mluevents.rw
+                <a href="mailto:mlueventsrw@gmail.com" className="hover:text-[#E5D1B1] transition-colors">
+                  mlueventsrw@gmail.com
                 </a>
               </p>
               <div className="flex items-center gap-3 pt-2">

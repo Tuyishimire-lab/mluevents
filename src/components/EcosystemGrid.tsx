@@ -63,7 +63,7 @@ export default function EcosystemGrid() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  {/* Clean image presentation — no dark gradient */}
+                  {/* Clean image presentation: no dark gradient */}
 
                   {/* Explicit In Development Badge */}
                   <div className="absolute top-3 right-3 bg-[#1C422D] text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full shadow-md pointer-events-none">
@@ -71,7 +71,7 @@ export default function EcosystemGrid() {
                   </div>
                 </div>
 
-                {/* Body — minimal, visual-first */}
+                {/* Body: minimal, visual-first */}
                 <div className="p-5 sm:p-6 flex items-center justify-between">
                   <h3 className="font-display text-sm sm:text-base font-bold text-[#050708] group-hover:text-[#1C422D] transition-colors tracking-wide">
                     {item.title}

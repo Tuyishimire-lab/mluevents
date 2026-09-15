@@ -109,7 +109,7 @@ export default function ProjectMediaModal({
           </svg>
         </button>
 
-        {/* Main Media Viewport — Expansive & Visual-First */}
+        {/* Main Media Viewport: Expansive & Visual-First */}
         <div className="relative flex-grow w-full h-full bg-black flex items-center justify-center overflow-hidden">
           {currentItem.type === "video" ? (
             <video
@@ -167,7 +167,7 @@ export default function ProjectMediaModal({
 
         {/* Bottom Control & Thumbnail Reel */}
         <div className="px-4 sm:px-6 py-3.5 bg-[#050708] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 shrink-0">
-          {/* Media Switcher Thumbnails — Zero Vertical Scrollbar */}
+          {/* Media Switcher Thumbnails: Zero Vertical Scrollbar */}
           <div className="flex items-center gap-2.5 overflow-x-auto overflow-y-hidden max-w-full py-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
             {project.media.map((item, idx) => (
               <button

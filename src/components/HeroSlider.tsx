@@ -109,7 +109,7 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
             />
           )}
 
-          {/* Clean media presentation — no dark gradients covering edges */}
+          {/* Clean media presentation: no dark gradients covering edges */}
         </div>
       ))}
 

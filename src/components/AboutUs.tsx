@@ -62,7 +62,7 @@ export default function AboutUs() {
                   Turning Vision Into Experience.
                 </h3>
                 <p className="text-sm sm:text-base text-[#555555] font-light leading-relaxed">
-                  To deliver thoughtfully curated events that exceed expectations—combining creativity, technical precision and genuine client care.
+                  To deliver thoughtfully curated events that exceed expectations, combining creativity, technical precision and genuine client care.
                 </p>
               </div>
             </div>

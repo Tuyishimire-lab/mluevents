@@ -58,15 +58,15 @@
   }
 }
 
-/* ── Component Classes ── */
+/* == Component Classes == */
 @layer components {
-  /* Display typography — tighter tracking for headings */
+  /* Display typography: tighter tracking for headings */
   .font-display {
     font-family: var(--font-sans);
     letter-spacing: -0.01em;
   }
 
-  /* Primary Brand Button — Dark Green (8% Identity) */
+  /* Primary Brand Button: Dark Green (8% Identity) */
   .btn-primary-green {
     @apply inline-flex items-center justify-center gap-2.5
            py-3.5 px-8 text-xs font-semibold uppercase
@@ -86,7 +86,7 @@
     transform: translateY(-1px);
   }
 
-  /* Ghost Button — Champagne / Gold */
+  /* Ghost Button: Champagne / Gold */
   .btn-ghost-champagne {
     @apply inline-flex items-center justify-center gap-2.5
            py-3.5 px-8 text-xs font-semibold uppercase
@@ -105,7 +105,7 @@
     transform: translateY(-1px);
   }
 
-  /* Ghost Button — White (for Hero over dark media) */
+  /* Ghost Button: White (for Hero over dark media) */
   .btn-ghost-white {
     @apply inline-flex items-center justify-center gap-2.5
            py-3.5 px-8 text-xs font-semibold uppercase
@@ -125,7 +125,7 @@
     transform: translateY(-1px);
   }
 
-  /* Solid Button — Emerald */
+  /* Solid Button: Emerald */
   .btn-solid-emerald {
     @apply inline-flex items-center justify-center gap-2.5
            py-3.5 px-8 text-xs font-semibold uppercase

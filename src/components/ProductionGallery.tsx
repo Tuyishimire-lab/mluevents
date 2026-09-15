@@ -218,7 +218,7 @@ export default function ProductionGallery({ onOpenBooking }: ProductionGalleryPr
                   className="group rounded-2xl overflow-hidden bg-white/[0.02] border border-white/10 hover:border-[#E5D1B1]/50 transition-all duration-500 flex flex-col h-full shadow-lg cursor-pointer"
                   title="Click to view event videos and photos"
                 >
-                  {/* Image — clean, sharp and bright without dark gradient */}
+                  {/* Image: clean, sharp and bright without dark gradient */}
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
                       src={item.image}
@@ -229,7 +229,7 @@ export default function ProductionGallery({ onOpenBooking }: ProductionGalleryPr
                     />
                   </div>
 
-                  {/* Body — sleek, minimalist, visual-first */}
+                  {/* Body: sleek, minimalist, visual-first */}
                   <div className="p-5 sm:p-6 flex items-center justify-between">
                     <div>
                       <span className="text-[10px] uppercase tracking-wider text-[#E5D1B1] font-semibold mb-1 block">
