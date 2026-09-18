@@ -132,21 +132,20 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
       {/* Subtle bottom contrast gradient only for bottom text legibility */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
 
-      {/* Bottom Content Container - Horizontal layout to maximize media view */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-6 sm:pb-8 md:pb-10 flex flex-col gap-4 sm:gap-5">
-        {/* Horizontal Split: Heading on Left, Description on Right */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 lg:gap-10">
-          <div className="lg:max-w-2xl xl:max-w-3xl">
-            <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-              Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.
-            </h1>
-          </div>
+      {/* Bottom Content Container - Stacked full-width horizontal single lines */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-6 sm:pb-8 md:pb-10 flex flex-col gap-3.5 sm:gap-4">
+        {/* Heading: One straight horizontal sentence */}
+        <div className="w-full">
+          <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-[34px] xl:text-[40px] font-bold text-white tracking-tight leading-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] whitespace-normal md:whitespace-nowrap">
+            Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.
+          </h1>
+        </div>
 
-          <div className="lg:max-w-md xl:max-w-lg">
-            <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)] border-l-2 border-[#E5D1B1]/70 pl-3 sm:pl-4">
-              Premium event planning and management for weddings, social celebrations and corporate experiences.
-            </p>
-          </div>
+        {/* Descriptive Paragraph: One straight horizontal sentence */}
+        <div className="w-full">
+          <p className="text-xs sm:text-sm md:text-[15px] text-white/90 font-normal leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)] border-l-2 border-[#E5D1B1]/80 pl-3 sm:pl-3.5 whitespace-normal md:whitespace-nowrap">
+            Premium event planning and management for weddings, social celebrations and corporate experiences.
+          </p>
         </div>
 
         {/* Bottom Action Bar: CTAs on Left, Slide Dots on Right */}

@@ -7,6 +7,7 @@ import SplitShowcase from "@/components/SplitShowcase";
 import ProductionGallery from "@/components/ProductionGallery";
 import WhoWeServe from "@/components/WhoWeServe";
 import EcosystemGrid from "@/components/EcosystemGrid";
+import PartnerShowcase from "@/components/PartnerShowcase";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
@@ -50,6 +51,9 @@ export default function ClientShell({
 
       {/* 09. Testimonials */}
       {children.testimonials}
+
+      {/* 10. Partner Showcase */}
+      <PartnerShowcase onOpenBooking={() => setIsBookingOpen(true)} />
 
       {/* 11. Final CTA */}
       <FinalCTA onOpenBooking={() => setIsBookingOpen(true)} />
