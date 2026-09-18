@@ -76,86 +76,112 @@ export default function HeroSlider({ onOpenBooking }: HeroSliderProps) {
       onMouseLeave={() => setIsPaused(false)}
       aria-label="MLU Events Hero Showcase"
     >
-      {/* Background Media Layers */}
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-          }`}
-        >
-          {slide.video ? (
-            <video
-              ref={(el) => {
-                videoRefs.current[index] = el;
-              }}
-              src={slide.video}
-              poster={slide.poster}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              className="w-full h-full object-cover object-center"
-            />
-          ) : (
-            <Image
-              src={slide.image || slide.poster || "/images/hero-corporate.webp"}
-              alt={slide.alt}
-              fill
-              priority={index === 0}
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-          )}
+      {/* Background Media Layers with Lazy-Loading */}
+      {slides.map((slide, index) => {
+        const shouldLoadVideo = index === current || index === (current + 1) % slides.length;
+        return (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === current ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+            }`}
+          >
+            {slide.video ? (
+              shouldLoadVideo ? (
+                <video
+                  ref={(el) => {
+                    videoRefs.current[index] = el;
+                  }}
+                  src={slide.video}
+                  poster={slide.poster}
+                  autoPlay={index === current}
+                  loop
+                  muted
+                  playsInline
+                  preload={index === current ? "auto" : "metadata"}
+                  className="w-full h-full object-cover object-center"
+                />
+              ) : (
+                slide.poster && (
+                  <Image
+                    src={slide.poster}
+                    alt={slide.alt}
+                    fill
+                    className="object-cover object-center"
+                    sizes="100vw"
+                  />
+                )
+              )
+            ) : (
+              <Image
+                src={slide.image || slide.poster || "/images/hero-corporate.webp"}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                className="object-cover object-center"
+                sizes="100vw"
+              />
+            )}
+          </div>
+        );
+      })}
 
-          {/* Clean media presentation: no dark gradients covering edges */}
+      {/* Subtle top contrast gradient for navbar clarity and video watermark masking */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 sm:h-36 bg-gradient-to-b from-[#050708]/95 via-[#050708]/60 to-transparent z-10" />
+
+      {/* Subtle bottom contrast gradient only for bottom text legibility */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 sm:h-64 bg-gradient-to-t from-black/85 via-black/40 to-transparent z-10" />
+
+      {/* Bottom Content Container - Horizontal layout to maximize media view */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-6 sm:pb-8 md:pb-10 flex flex-col gap-4 sm:gap-5">
+        {/* Horizontal Split: Heading on Left, Description on Right */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-3 lg:gap-10">
+          <div className="lg:max-w-2xl xl:max-w-3xl">
+            <h1 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-[1.2] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+              Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.
+            </h1>
+          </div>
+
+          <div className="lg:max-w-md xl:max-w-lg">
+            <p className="text-xs sm:text-sm text-white/90 font-normal leading-relaxed drop-shadow-[0_1px_8px_rgba(0,0,0,0.95)] border-l-2 border-[#E5D1B1]/70 pl-3 sm:pl-4">
+              Premium event planning and management for weddings, social celebrations and corporate experiences.
+            </p>
+          </div>
         </div>
-      ))}
 
-      {/* Bottom Content Container */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-12 sm:pb-16 md:pb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-        {/* Bottom-Left: Refined Master Brand Title & CTAs */}
-        <div className="max-w-2xl text-left">
-          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-3 sm:mb-4 leading-[1.15] drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)]">
-            Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.
-          </h1>
-
-          <p className="text-xs sm:text-sm md:text-base text-white font-medium max-w-xl leading-relaxed mb-6 sm:mb-8 drop-shadow-[0_1px_10px_rgba(0,0,0,0.9)]">
-            Premium event planning and management for weddings, social celebrations and corporate experiences.
-          </p>
-
+        {/* Bottom Action Bar: CTAs on Left, Slide Dots on Right */}
+        <div className="flex items-center justify-between gap-4 pt-2 border-t border-white/15">
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
             <button
               onClick={onOpenBooking}
-              className="text-[11px] sm:text-xs tracking-[0.15em] font-semibold text-white bg-[#1C422D] border border-[#1C422D] rounded-full px-7 sm:px-8 py-3 sm:py-3.5 hover:bg-[#25573B] hover:border-[#25573B] transition-all duration-300 uppercase active:scale-95 shadow-lg shadow-black/20 cursor-pointer"
+              className="text-[11px] sm:text-xs tracking-[0.15em] font-semibold text-white bg-[#1C422D] border border-[#1C422D] rounded-full px-6 sm:px-7 py-2.5 sm:py-3 hover:bg-[#25573B] hover:border-[#25573B] transition-all duration-300 uppercase active:scale-95 shadow-lg shadow-black/20 cursor-pointer"
             >
               Plan Your Event
             </button>
 
             <a
               href="#work"
-              className="text-[11px] sm:text-xs tracking-[0.15em] font-medium text-white border border-white/40 rounded-full px-7 sm:px-8 py-3 sm:py-3.5 hover:bg-white/10 hover:border-white transition-all duration-300 uppercase active:scale-95 backdrop-blur-sm inline-flex items-center justify-center cursor-pointer"
+              className="text-[11px] sm:text-xs tracking-[0.15em] font-medium text-white border border-white/40 rounded-full px-6 sm:px-7 py-2.5 sm:py-3 hover:bg-white/10 hover:border-white transition-all duration-300 uppercase active:scale-95 backdrop-blur-sm inline-flex items-center justify-center cursor-pointer"
             >
               View Our Work
             </a>
           </div>
-        </div>
 
-        {/* Bottom-Right: Clean Minimalist Progress Dashes */}
-        <div className="flex items-center gap-2 self-start md:self-end pb-1 sm:pb-2">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrent(idx)}
-              className={`transition-all duration-500 rounded-full ${
-                idx === current
-                  ? "w-8 sm:w-10 h-1 bg-white"
-                  : "w-2.5 sm:w-3 h-1 bg-white/35 hover:bg-white/60"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+          {/* Clean Minimalist Progress Dashes */}
+          <div className="flex items-center gap-2">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrent(idx)}
+                className={`transition-all duration-500 rounded-full cursor-pointer ${
+                  idx === current
+                    ? "w-7 sm:w-10 h-1 bg-white"
+                    : "w-2 sm:w-2.5 h-1 bg-white/35 hover:bg-white/60"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

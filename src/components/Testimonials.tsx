@@ -6,7 +6,7 @@ const testimonials = [
   {
     quote:
       "MLU Events took our flagship product launch to a level of excellence we hadn't seen before in Kigali. The stage engineering, lighting, and timeline execution were flawless.",
-    author: "Enterprise Client",
+    author: "TECNO",
     role: "Flagship Product Launch",
     location: "Kigali Convention Centre",
   },
@@ -25,14 +25,14 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <div className="text-center max-w-5xl xl:max-w-6xl mx-auto mb-16 sm:mb-20">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#E5D1B1] font-semibold mb-3 block">
               Testimonials
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[48px] font-bold text-white tracking-tight mb-4 leading-tight lg:whitespace-nowrap">
               Trusted to Deliver.
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-white/80 font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-white/80 font-light leading-relaxed max-w-2xl mx-auto">
               Real experiences from the people and organisations we&apos;ve served across corporate forums and bespoke celebrations.
             </p>
           </div>

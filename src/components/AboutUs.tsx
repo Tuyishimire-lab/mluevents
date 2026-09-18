@@ -16,7 +16,10 @@ export default function AboutUs() {
               Setting the Standard for Exceptional Events.
             </h2>
             <p className="text-base sm:text-lg text-[#444444] font-light leading-relaxed">
-              We translate personal stories and corporate ambitions into elevated events that reflect your highest standards.
+              MLU Events Ltd is an event planning and management company dedicated to designing and delivering premium weddings, social celebrations and corporate events.
+              We work closely with each client to understand their vision and translate it into an event that reflects their story, their brand and their standards.
+              Built on quality and trust, MLU is continuously expanding its capabilities toward a fully integrated events experience.
+
             </p>
           </div>
         </FadeIn>
@@ -40,7 +43,7 @@ export default function AboutUs() {
                   Setting the Standard for Exceptional Events.
                 </h3>
                 <p className="text-sm sm:text-base text-[#555555] font-light leading-relaxed">
-                  To be the premier event planning company in the region, trusted for Rwanda&apos;s most memorable celebrations and corporate experiences.
+                  To become the leading premium event planning company in the region, recognized as the trusted name behind the most memorable weddings, social gatherings and corporate experiences.
                 </p>
               </div>
             </div>
@@ -62,7 +65,7 @@ export default function AboutUs() {
                   Turning Vision Into Experience.
                 </h3>
                 <p className="text-sm sm:text-base text-[#555555] font-light leading-relaxed">
-                  To deliver thoughtfully curated events that exceed expectations, combining creativity, technical precision and genuine client care.
+                  To deliver premium, thoughtfully planned events that exceed expectations combining professionalism, creativity and attention to detail at every stage, while continuously expanding the services offered under the MLU Events brand.
                 </p>
               </div>
             </div>

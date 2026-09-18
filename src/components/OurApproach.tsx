@@ -36,14 +36,14 @@ export default function OurApproach() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+          <div className="text-center max-w-5xl xl:max-w-6xl mx-auto mb-16 sm:mb-24">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-3 block">
               Our Approach
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[48px] font-bold text-[#050708] tracking-tight mb-4 leading-tight lg:whitespace-nowrap">
               From Vision to Experience.
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed max-w-2xl mx-auto">
               A disciplined, thoughtful methodology ensuring that every celebration and corporate gathering is executed without compromise.
             </p>
           </div>

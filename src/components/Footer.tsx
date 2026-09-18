@@ -15,19 +15,16 @@ export default function Footer({ onOpenBooking }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 sm:gap-12 mb-16 sm:mb-20">
           {/* Column 1 & 2: Brand Profile */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-6 group">
-              <div className="relative w-8 h-8 sm:w-9 sm:h-9">
+            <Link href="/" className="inline-block mb-6 group">
+              <div className="relative w-28 sm:w-36 h-8 sm:h-10 transition-transform duration-300 group-hover:scale-105">
                 <Image
-                  src="/brand/mlu-logo-white.png"
+                  src="/brand/mlu-logo-white-lockup.png"
                   alt="MLU Events"
                   fill
-                  className="object-contain"
-                  sizes="36px"
+                  className="object-contain object-left"
+                  sizes="(max-width: 640px) 112px, 144px"
                 />
               </div>
-              <span className="font-display text-lg sm:text-xl font-bold tracking-[0.2em] text-white uppercase">
-                MLU EVENTS LTD
-              </span>
             </Link>
             <p className="text-xs sm:text-sm text-white/60 font-light max-w-sm leading-relaxed mb-6">
               Exceptional Events. Thoughtfully Designed. Seamlessly Delivered.

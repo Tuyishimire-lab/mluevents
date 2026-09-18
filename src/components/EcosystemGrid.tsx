@@ -36,15 +36,15 @@ export default function EcosystemGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+          <div className="text-center max-w-5xl xl:max-w-6xl mx-auto mb-16 sm:mb-24">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-3 block">
               Our Growth
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[48px] font-bold text-[#050708] tracking-tight mb-4 leading-tight lg:whitespace-nowrap">
               Building a Complete Events Experience.
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed">
-              Progressively expanding to bring complementary services under one trusted luxury brand.
+            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed max-w-2xl mx-auto">
+              Progressively expanding to bring complementary services under one trusted brand.
             </p>
           </div>
         </FadeIn>
@@ -71,12 +71,19 @@ export default function EcosystemGrid() {
                   </div>
                 </div>
 
-                {/* Body: minimal, visual-first */}
-                <div className="p-5 sm:p-6 flex items-center justify-between">
-                  <h3 className="font-display text-sm sm:text-base font-bold text-[#050708] group-hover:text-[#1C422D] transition-colors tracking-wide">
-                    {item.title}
-                  </h3>
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#1C422D]" />
+                {/* Body: Title and small description */}
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-display text-sm sm:text-base font-bold text-[#050708] group-hover:text-[#1C422D] transition-colors tracking-wide">
+                        {item.title}
+                      </h3>
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#1C422D] shrink-0 ml-2" />
+                    </div>
+                    <p className="text-xs text-[#666666] font-light leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </FadeIn>

@@ -10,6 +10,7 @@ import EcosystemGrid from "@/components/EcosystemGrid";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import FloatingContactPill from "@/components/FloatingContactPill";
 
 export default function ClientShell({
   children,
@@ -61,6 +62,9 @@ export default function ClientShell({
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
       />
+
+      {/* Floating Quick Action Concierge Pill */}
+      <FloatingContactPill onOpenBooking={() => setIsBookingOpen(true)} />
     </>
   );
 }

@@ -12,7 +12,7 @@ interface ProductionGalleryProps {
 const portfolioProjects: PortfolioProjectData[] = [
   {
     title: "TECNO Spark 20 Launch",
-    meta: "Product Launch | Kigali, Rwanda | 2024",
+    meta: "Product Launch | Kigali, Rwanda |",
     image: "/images/SPARK 20 LAUNCH I.jpg",
     media: [
       {
@@ -35,7 +35,7 @@ const portfolioProjects: PortfolioProjectData[] = [
   },
   {
     title: "Traditional Gusaba Ceremony",
-    meta: "Traditional Ceremony | Kigali, Rwanda | 2024",
+    meta: "Traditional Ceremony | Kigali, Rwanda |",
     image: "/images/showcase-gusaba.webp",
     media: [
       {
@@ -58,7 +58,7 @@ const portfolioProjects: PortfolioProjectData[] = [
   },
   {
     title: "TECNO Spark 20 Stagecraft",
-    meta: "Stage & Lighting | Kigali, Rwanda | 2024",
+    meta: "Stage & Lighting | Kigali, Rwanda |",
     image: "/images/SPARK 20 LAUNCH II.jpg",
     media: [
       {
@@ -81,7 +81,7 @@ const portfolioProjects: PortfolioProjectData[] = [
   },
   {
     title: "Bespoke Wedding Reception",
-    meta: "Luxury Wedding | Kigali, Rwanda | 2024",
+    meta: "Luxury Wedding | Kigali, Rwanda |",
     image: "/images/hero-wedding.webp",
     media: [
       {
@@ -99,7 +99,7 @@ const portfolioProjects: PortfolioProjectData[] = [
   },
   {
     title: "TECNO Brand Activation",
-    meta: "Brand Activation | Kigali, Rwanda | 2024",
+    meta: "Brand Activation | Kigali, Rwanda |",
     image: "/images/SPARK 20 LAUNCH III.jpg",
     media: [
       {
@@ -122,7 +122,7 @@ const portfolioProjects: PortfolioProjectData[] = [
   },
   {
     title: "Continental Summit Gala",
-    meta: "Executive Summit | Kigali, Rwanda | 2023",
+    meta: "Executive Summit | Kigali, Rwanda |",
     image: "/images/showcase-gala.webp",
     media: [
       {

@@ -6,14 +6,16 @@ import FadeIn from "@/components/FadeIn";
 export default function Introduction() {
   return (
     <section className="py-24 sm:py-32 md:py-36 bg-white border-b border-[#E5D1B1]/30 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 text-center">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 text-center">
         <FadeIn>
-          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-6 sm:mb-8 leading-tight">
-            More Than an Event. An Experience.
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-[54px] xl:text-6xl font-bold text-[#050708] tracking-tight mb-6 sm:mb-8 leading-tight lg:whitespace-nowrap">
+            More Than an Event, an Experience.
           </h2>
 
           <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-[#444444] font-light leading-relaxed mb-8 sm:mb-10">
-            Creating meaningful and memorable experiences through bespoke planning, creative design and flawless management.
+            MLU Events Ltd creates meaningful and memorable experiences through professional event planning and management.
+            From intimate celebrations to significant corporate occasions, we combine creativity, precision and genuine care to bring each client's vision to life.
+
           </p>
 
           <div>

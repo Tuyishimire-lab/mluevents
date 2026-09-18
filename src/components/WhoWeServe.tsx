@@ -12,14 +12,14 @@ export default function WhoWeServe({ onOpenBooking }: WhoWeServeProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <FadeIn>
-          <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-24">
+          <div className="text-center max-w-5xl xl:max-w-6xl mx-auto mb-16 sm:mb-24">
             <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-3 block">
               Who We Serve
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-4 leading-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[48px] font-bold text-[#050708] tracking-tight mb-4 leading-tight lg:whitespace-nowrap">
               Created for People and Brands That Expect More.
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-[#555555] font-light leading-relaxed max-w-2xl mx-auto">
               High standards for lifetime milestones and international corporate forums.
             </p>
           </div>
@@ -38,7 +38,7 @@ export default function WhoWeServe({ onOpenBooking }: WhoWeServeProps) {
                   Weddings & Social Celebrations
                 </h3>
                 <p className="text-sm sm:text-base text-[#666666] font-light leading-relaxed mb-8">
-                  Bespoke aesthetic design, seamless coordination and stress-free celebration management.
+                  For couples and families planning premium weddings and social events who expect elevated design, seamless coordination and a stress-free experience.
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export default function WhoWeServe({ onOpenBooking }: WhoWeServeProps) {
                   Corporate Experiences
                 </h3>
                 <p className="text-sm sm:text-base text-[#666666] font-light leading-relaxed mb-8">
-                  High-impact conferences, product launches, galas and executive brand experiences.
+                  For businesses and organizations seeking professionally managed conferences, product or campaign launches, exhibitions and other corporate gatherings.
                 </p>
               </div>
 

@@ -9,13 +9,13 @@ interface FinalCTAProps {
 export default function FinalCTA({ onOpenBooking }: FinalCTAProps) {
   return (
     <section className="py-24 sm:py-32 md:py-36 bg-white relative overflow-hidden text-[#050708] border-t border-[#E5D1B1]/30">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-12 text-center relative z-10">
+      <div className="max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 md:px-12 text-center relative z-10">
         <FadeIn>
           <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-4 block">
             Start Your Journey
           </span>
 
-          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-6 leading-tight">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-[48px] font-bold text-[#050708] tracking-tight mb-6 leading-tight lg:whitespace-nowrap">
             Your Vision Deserves an Exceptional Experience.
           </h2>
 

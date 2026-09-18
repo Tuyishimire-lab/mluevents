@@ -31,11 +31,13 @@ export default function ProjectMediaModal({
   onOpenBooking,
 }: ProjectMediaModalProps) {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
-  // Reset to first media item whenever a new project is opened
+  // Reset to first media item and muted state whenever a new project is opened
   useEffect(() => {
     if (isOpen) {
       setActiveMediaIndex(0);
+      setIsMuted(true);
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
@@ -109,6 +111,32 @@ export default function ProjectMediaModal({
           </svg>
         </button>
 
+        {/* Floating Sound Toggle for Videos */}
+        {currentItem.type === "video" && (
+          <button
+            onClick={() => setIsMuted(!isMuted)}
+            className="absolute top-3 right-16 sm:top-5 sm:right-20 z-40 h-10 px-3 sm:px-4 rounded-full bg-black/75 backdrop-blur-md hover:bg-white/20 text-white/90 hover:text-white border border-white/15 flex items-center gap-1.5 transition-all cursor-pointer shadow-xl text-xs font-medium"
+            aria-label={isMuted ? "Unmute video audio" : "Mute video audio"}
+          >
+            {isMuted ? (
+              <>
+                <svg className="w-4 h-4 text-[#E5D1B1]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                </svg>
+                <span className="hidden sm:inline text-[10px] uppercase tracking-wider text-[#E5D1B1]">Sound Off</span>
+              </>
+            ) : (
+              <>
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                </svg>
+                <span className="hidden sm:inline text-[10px] uppercase tracking-wider">Sound On</span>
+              </>
+            )}
+          </button>
+        )}
+
         {/* Main Media Viewport: Expansive & Visual-First */}
         <div className="relative flex-grow w-full h-full bg-black flex items-center justify-center overflow-hidden">
           {currentItem.type === "video" ? (
@@ -117,6 +145,7 @@ export default function ProjectMediaModal({
               src={currentItem.src}
               controls
               autoPlay
+              muted={isMuted}
               playsInline
               className="w-full h-full object-contain"
             />
