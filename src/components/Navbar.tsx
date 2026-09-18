@@ -150,7 +150,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-6 lg:gap-9">
+          <nav className="hidden md:flex items-center gap-6 lg:gap-9 font-display">
             <Link
               href="#about"
               className={`relative py-1 text-xs lg:text-sm tracking-[0.1em] transition-colors uppercase font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.85)] ${
@@ -348,7 +348,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:block font-display">
             <button
               onClick={onOpenBooking}
               className="text-xs lg:text-sm tracking-[0.1em] text-[#E5D1B1] border border-[#E5D1B1]/50 rounded-full px-6 py-2 hover:bg-[#E5D1B1] hover:text-[#050708] transition-all duration-300 uppercase font-medium cursor-pointer"
@@ -376,7 +376,7 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
 
       {/* Mobile Fullscreen Drawer */}
       <div
-        className={`md:hidden fixed inset-0 w-full h-full min-h-screen bg-[#050708] z-[60] flex flex-col items-center justify-start overflow-y-auto px-6 py-20 gap-6 transition-all duration-300 ${
+        className={`md:hidden fixed inset-0 w-full h-full min-h-screen bg-[#050708] z-[60] flex flex-col items-center justify-start overflow-y-auto px-6 py-20 gap-6 transition-all duration-300 font-display ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
