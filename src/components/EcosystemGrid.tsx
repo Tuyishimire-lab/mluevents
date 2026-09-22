@@ -8,25 +8,25 @@ const growthItems = [
     title: "FASHION",
     status: "In Development",
     description: "Traditional and contemporary wedding fashion.",
-    image: "/images/service-fashion.webp",
+    image: "/images/growth-fashion.png",
   },
   {
     title: "PHOTO & VIDEO STUDIO",
     status: "In Development",
     description: "Professional event photography and videography.",
-    image: "/images/service-cinema.webp",
+    image: "/images/growth-photography.jpg",
   },
   {
     title: "OUTSIDE CATERING",
     status: "In Development",
     description: "Catering solutions for private and corporate occasions.",
-    image: "/images/service-catering.webp",
+    image: "/images/growth-catering.png",
   },
   {
     title: "VENUE RENTAL",
     status: "In Development",
     description: "Selected venue solutions for different events and occasions.",
-    image: "/images/service-venue.webp",
+    image: "/images/growth-venue.png",
   },
 ];
 
@@ -55,7 +55,7 @@ export default function EcosystemGrid() {
             <FadeIn key={idx} delay={idx * 100}>
               <div className="group rounded-2xl overflow-hidden bg-white border border-[#E5D1B1]/70 hover:border-[#1C422D]/40 transition-all duration-300 flex flex-col h-full shadow-sm hover:shadow-md">
                 {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-square overflow-hidden bg-[#0A0D0B]">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -63,23 +63,20 @@ export default function EcosystemGrid() {
                     className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  {/* Clean image presentation: no dark gradient */}
-
-                  {/* Explicit In Development Badge */}
-                  <div className="absolute top-3 right-3 bg-[#1C422D] text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full shadow-md pointer-events-none">
-                    {item.status}
-                  </div>
                 </div>
 
-                {/* Body: Title and small description */}
+                {/* Body: Status Badge, Title and small description */}
                 <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="font-display text-sm sm:text-base font-bold text-[#050708] group-hover:text-[#1C422D] transition-colors tracking-wide">
-                        {item.title}
-                      </h3>
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#1C422D] shrink-0 ml-2" />
+                    <div className="flex items-center justify-between gap-2 mb-3">
+                      <span className="inline-flex items-center gap-1.5 bg-[#1C422D] text-white text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full shadow-sm">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#E5D1B1] animate-pulse" />
+                        {item.status}
+                      </span>
                     </div>
+                    <h3 className="font-display text-sm sm:text-base font-bold text-[#050708] group-hover:text-[#1C422D] transition-colors tracking-wide mb-1.5">
+                      {item.title}
+                    </h3>
                     <p className="text-xs text-[#666666] font-light leading-relaxed">
                       {item.description}
                     </p>

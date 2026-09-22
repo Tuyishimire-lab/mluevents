@@ -186,54 +186,66 @@ export default function ProjectMediaModal({
             </>
           )}
 
-          {/* Floating Caption Badge */}
-          {currentItem.caption && (
-            <div className="absolute bottom-3 left-4 sm:left-6 z-20 bg-black/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/15 text-[11px] sm:text-xs text-white/95 font-medium shadow-lg max-w-[85%] truncate">
-              {currentItem.caption}
-            </div>
-          )}
         </div>
 
         {/* Bottom Control & Thumbnail Reel */}
-        <div className="px-4 sm:px-6 py-3.5 bg-[#050708] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 shrink-0">
-          {/* Media Switcher Thumbnails: Zero Vertical Scrollbar */}
-          <div className="flex items-center gap-2.5 overflow-x-auto overflow-y-hidden max-w-full py-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-            {project.media.map((item, idx) => (
-              <button
-                key={idx}
-                onClick={() => setActiveMediaIndex(idx)}
-                className={`relative w-16 h-11 sm:w-20 sm:h-13 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer shadow-sm ${
-                  idx === activeMediaIndex
-                    ? "border-[#E5D1B1] scale-105 shadow-md shadow-[#E5D1B1]/30 opacity-100"
-                    : "border-white/15 opacity-55 hover:opacity-90 hover:border-white/40"
-                }`}
-                aria-label={`View media ${idx + 1}`}
-              >
-                {item.type === "video" ? (
-                  <div className="w-full h-full bg-black/60 flex items-center justify-center relative">
+        <div className="px-4 sm:px-6 py-3 sm:py-3.5 bg-[#050708] border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1 w-full sm:w-auto">
+            {/* Media Switcher Thumbnails: Zero Vertical Scrollbar */}
+            <div className="flex items-center gap-2.5 overflow-x-auto overflow-y-hidden shrink-0 py-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              {project.media.map((item, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveMediaIndex(idx)}
+                  className={`relative w-16 h-11 sm:w-20 sm:h-13 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer shadow-sm ${
+                    idx === activeMediaIndex
+                      ? "border-[#E5D1B1] scale-105 shadow-md shadow-[#E5D1B1]/30 opacity-100"
+                      : "border-white/15 opacity-55 hover:opacity-90 hover:border-white/40"
+                  }`}
+                  aria-label={`View media ${idx + 1}`}
+                >
+                  {item.type === "video" ? (
+                    <div className="w-full h-full bg-black/60 flex items-center justify-center relative">
+                      <Image
+                        src={item.poster || project.image}
+                        alt={item.caption}
+                        fill
+                        className="object-cover opacity-60"
+                        sizes="80px"
+                      />
+                      <div className="relative z-10 w-5 h-5 rounded-full bg-[#1C422D] flex items-center justify-center text-white text-[9px] shadow-sm">
+                        ▶
+                      </div>
+                    </div>
+                  ) : (
                     <Image
-                      src={item.poster || project.image}
+                      src={item.src}
                       alt={item.caption}
                       fill
-                      className="object-cover opacity-60"
+                      className="object-cover"
                       sizes="80px"
                     />
-                    <div className="relative z-10 w-5 h-5 rounded-full bg-[#1C422D] flex items-center justify-center text-white text-[9px] shadow-sm">
-                      ▶
-                    </div>
-                  </div>
-                ) : (
-                  <Image
-                    src={item.src}
-                    alt={item.caption}
-                    fill
-                    className="object-cover"
-                    sizes="80px"
-                  />
-                )}
-              </button>
-            ))}
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Media Caption: Moved LOWER into bottom bar, completely out of the way of video & controls */}
+            {currentItem.caption && (
+              <div className="min-w-0 flex-1 border-l border-white/15 pl-3 sm:pl-4 hidden sm:block">
+                <p className="text-xs sm:text-sm text-white/80 font-light truncate">
+                  {currentItem.caption}
+                </p>
+              </div>
+            )}
           </div>
+
+          {/* Mobile-only caption row */}
+          {currentItem.caption && (
+            <p className="text-[11px] text-white/75 font-light truncate w-full sm:hidden">
+              {currentItem.caption}
+            </p>
+          )}
 
           {/* Action Button: Direct to Booking Form */}
           <div className="w-full sm:w-auto flex justify-end shrink-0">

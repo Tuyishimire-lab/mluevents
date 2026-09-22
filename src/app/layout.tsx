@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "MLU Events",
     images: [
       {
-        url: "/images/hero-wedding.webp",
+        url: "/images/showcase-gala.webp",
         width: 1920,
         height: 1080,
         alt: "MLU Events Luxury Experience",
@@ -81,7 +81,7 @@ export default function RootLayout({
                 "Premier event planning and management house in Kigali, Rwanda, specializing in luxury weddings, traditional Gusaba ceremonies, and executive corporate summits.",
               url: "https://mluevents.com",
               telephone: "+250787742477",
-              email: "mlueventsrw@gmail.com",
+              email: "hello@mluevents.com",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Kigali",

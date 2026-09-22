@@ -11,25 +11,15 @@ interface ProductionGalleryProps {
 
 const portfolioProjects: PortfolioProjectData[] = [
   {
-    title: "TECNO Spark 20 Launch",
+    title: "TECNO Camon 20 Launch",
     meta: "Product Launch | Kigali, Rwanda |",
-    image: "/images/SPARK 20 LAUNCH I.jpg",
+    image: "/images/camon-20-launch.jpg",
     media: [
       {
         type: "video",
         src: "/videos/CAMON 20 LAUNCH.mp4",
         caption: "Flagship Concert Stagecraft & Product Reveal Reel",
-        poster: "/images/SPARK 20 LAUNCH I.jpg",
-      },
-      {
-        type: "image",
-        src: "/images/SPARK 20 LAUNCH I.jpg",
-        caption: "Main Stage Architecture & Concert Lighting Rig",
-      },
-      {
-        type: "image",
-        src: "/images/SPARK 20 LAUNCH II.jpg",
-        caption: "VIP Presentation & Live Stage Engineering",
+        poster: "/images/camon-20-launch.jpg",
       },
     ],
   },
@@ -49,74 +39,53 @@ const portfolioProjects: PortfolioProjectData[] = [
         src: "/images/showcase-gusaba.webp",
         caption: "Art-Directed Cultural Stage & Imigongo Floral Decor",
       },
-      {
-        type: "image",
-        src: "/images/hero-wedding.webp",
-        caption: "Bespoke Matrimonial Styling",
-      },
     ],
   },
   {
-    title: "TECNO Spark 20 Stagecraft",
+    title: "TECNO Camon 19 Launch",
     meta: "Stage & Lighting | Kigali, Rwanda |",
-    image: "/images/SPARK 20 LAUNCH II.jpg",
+    image: "/images/camon-19-stage.jpg",
     media: [
       {
         type: "video",
         src: "/videos/CAMON 19 LAUNCH.mp4",
         caption: "Acoustic Engineering & Dynamic Concert Truss Rig",
-        poster: "/images/SPARK 20 LAUNCH II.jpg",
-      },
-      {
-        type: "image",
-        src: "/images/SPARK 20 LAUNCH II.jpg",
-        caption: "Full Auditorium Stage Setup",
-      },
-      {
-        type: "image",
-        src: "/images/SPARK 20 LAUNCH III.jpg",
-        caption: "Interactive Stage & Experience Zone",
+        poster: "/images/camon-19-stage.jpg",
       },
     ],
   },
   {
     title: "Bespoke Wedding Reception",
     meta: "Luxury Wedding | Kigali, Rwanda |",
-    image: "/images/hero-wedding.webp",
+    image: "/images/wedding-reception.jpg",
     media: [
       {
         type: "video",
         src: "/videos/WEEDING EVENT I.mp4",
         caption: "Couture Matrimonial Gala & Grand Reception",
-        poster: "/images/hero-wedding.webp",
-      },
-      {
-        type: "image",
-        src: "/images/hero-wedding.webp",
-        caption: "Luxury Table Styling & Romantic Candlelit Ambiance",
+        poster: "/images/wedding-reception.jpg",
       },
     ],
   },
   {
-    title: "TECNO Brand Activation",
+    title: "TECNO Spark 20 Launch",
     meta: "Brand Activation | Kigali, Rwanda |",
-    image: "/images/SPARK 20 LAUNCH III.jpg",
+    image: "/images/SPARK 20 LAUNCH I.jpg",
     media: [
       {
-        type: "video",
-        src: "/videos/CAMON 20 LAUNCH.mp4",
-        caption: "Interactive Brand Experience & Media Engagement",
-        poster: "/images/SPARK 20 LAUNCH III.jpg",
+        type: "image",
+        src: "/images/SPARK 20 LAUNCH I.jpg",
+        caption: "TECNO Spark 20 Product Reveal & Football Experience Booth",
+      },
+      {
+        type: "image",
+        src: "/images/SPARK 20 LAUNCH II.jpg",
+        caption: "TECNO Spark 20 Stage Lighting, Seating & Tech Showcase",
       },
       {
         type: "image",
         src: "/images/SPARK 20 LAUNCH III.jpg",
-        caption: "VIP Product Trial & Influencer Experience Zone",
-      },
-      {
-        type: "image",
-        src: "/images/SPARK 20 LAUNCH I.jpg",
-        caption: "Experiential Branding Setup",
+        caption: "Auditorium Stagecraft, Stop At Nothing Branding & Panel Discussion",
       },
     ],
   },
@@ -143,13 +112,19 @@ const portfolioProjects: PortfolioProjectData[] = [
 const allWorkProject: PortfolioProjectData = {
   title: "MLU Event Highlights & Video Reels",
   meta: "Featured Productions | Kigali, Rwanda",
-  image: "/images/SPARK 20 LAUNCH I.jpg",
+  image: "/images/camon-20-launch.jpg",
   media: [
     {
       type: "video",
       src: "/videos/CAMON 20 LAUNCH.mp4",
-      caption: "Concert Stagecraft & Flagship Product Launch Reel",
-      poster: "/images/SPARK 20 LAUNCH I.jpg",
+      caption: "TECNO Camon 20 Launch: Concert Stagecraft & Product Reveal Reel",
+      poster: "/images/camon-20-launch.jpg",
+    },
+    {
+      type: "video",
+      src: "/videos/CAMON 19 LAUNCH.mp4",
+      caption: "TECNO Camon 19 Launch: Keynote & Concert Truss Production",
+      poster: "/images/camon-19-stage.jpg",
     },
     {
       type: "video",
@@ -159,25 +134,19 @@ const allWorkProject: PortfolioProjectData = {
     },
     {
       type: "video",
-      src: "/videos/CAMON 19 LAUNCH.mp4",
-      caption: "Acoustic Engineering & Dynamic Concert Truss Production",
-      poster: "/images/SPARK 20 LAUNCH II.jpg",
-    },
-    {
-      type: "video",
       src: "/videos/WEEDING EVENT I.mp4",
       caption: "Luxury Matrimonial Gala & Wedding Reception Reel",
-      poster: "/images/hero-wedding.webp",
+      poster: "/images/wedding-reception.jpg",
+    },
+    {
+      type: "image",
+      src: "/images/SPARK 20 LAUNCH I.jpg",
+      caption: "TECNO Spark 20 Launch Experience & Stage Setup",
     },
     {
       type: "image",
       src: "/images/showcase-gala.webp",
       caption: "Continental Summit Gala at Kigali Convention Centre",
-    },
-    {
-      type: "image",
-      src: "/images/showcase-gusaba.webp",
-      caption: "Traditional Gusaba Bespoke Floral Stage",
     },
   ],
 };

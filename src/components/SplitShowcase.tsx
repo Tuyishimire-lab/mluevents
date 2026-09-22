@@ -14,7 +14,7 @@ const weddingImages = [
     caption: "Traditional Gusaba Ceremony",
   },
   {
-    src: "/images/hero-wedding.webp",
+    src: "/images/wedding-reception.jpg",
     alt: "Bespoke White Wedding Reception",
     caption: "Grand Reception Styling",
   },

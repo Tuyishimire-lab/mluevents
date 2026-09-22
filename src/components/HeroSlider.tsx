@@ -17,7 +17,7 @@ interface Slide {
 const slides: Slide[] = [
   {
     video: "/videos/WEEDING EVENT I.mp4",
-    poster: "/images/hero-wedding.webp",
+    poster: "/images/wedding-reception.jpg",
     alt: "Luxury Wedding Celebration and Ceremony",
   },
   {

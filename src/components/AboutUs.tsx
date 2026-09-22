@@ -8,18 +8,14 @@ export default function AboutUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
         {/* Section Header */}
         <FadeIn>
-          <div className="max-w-3xl mb-16 sm:mb-20">
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-3 block">
+          <div className="max-w-3xl mb-12 sm:mb-16">
+            <h2 className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-[#1C422D] font-semibold mb-4 sm:mb-6 block">
               About Us
-            </span>
-            <h2 className="font-display text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#050708] tracking-tight mb-6 leading-tight">
-              Setting the Standard for Exceptional Events.
             </h2>
             <p className="text-base sm:text-lg text-[#444444] font-light leading-relaxed">
               MLU Events Ltd is an event planning and management company dedicated to designing and delivering premium weddings, social celebrations and corporate events.
               We work closely with each client to understand their vision and translate it into an event that reflects their story, their brand and their standards.
               Built on quality and trust, MLU is continuously expanding its capabilities toward a fully integrated events experience.
-
             </p>
           </div>
         </FadeIn>
