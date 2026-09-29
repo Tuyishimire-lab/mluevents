@@ -9,7 +9,6 @@ interface BookingModalProps {
 
 export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -22,48 +21,38 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setErrorMessage("");
 
+    // 1. Instantly show the success confirmation (0ms delay)
+    setSubmitted(true);
+
+    // 2. Open WhatsApp synchronously within the direct click gesture
+    // This guarantees the browser does NOT block the popup
     try {
-      const res = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || "Failed to submit inquiry. Please try again.");
-      }
-
-      setSubmitted(true);
-
-      // Auto-launch WhatsApp directly with the pre-filled inquiry
-      try {
-        const opened = window.open(whatsappUrl, "_blank");
-        // If window.open was blocked by a strict popup blocker, redirect fallback
-        if (!opened || opened.closed || typeof opened.closed === "undefined") {
-          window.location.href = whatsappUrl;
-        }
-      } catch (openErr) {
-        console.warn("Auto-redirect notice:", openErr);
-      }
-    } catch (err: unknown) {
-      console.error("Inquiry submission error:", err);
-      setErrorMessage(
-        err instanceof Error
-          ? err.message
-          : "An unexpected error occurred. Please try again or reach out on WhatsApp."
-      );
-    } finally {
-      setIsSubmitting(false);
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    } catch (openErr) {
+      console.warn("WhatsApp auto-open notice:", openErr);
     }
+
+    // 3. Dispatch the email to hello@mluevents.com in parallel
+    fetch("/api/inquiry", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          console.warn("Background email dispatch warning:", errData);
+        }
+      })
+      .catch((err) => {
+        console.warn("Background email dispatch failed:", err);
+      });
   };
 
   const handleReset = () => {
@@ -192,20 +181,9 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
-                className="w-full flex items-center justify-center gap-2 text-xs sm:text-sm tracking-[0.1em] text-white bg-[#1C422D] border border-[#1C422D] rounded-full py-3.5 hover:bg-[#25573B] transition-all duration-300 uppercase mt-1 sm:mt-2 active:scale-[0.98] font-semibold cursor-pointer shadow-md shadow-[#1C422D]/10 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 text-xs sm:text-sm tracking-[0.1em] text-white bg-[#1C422D] border border-[#1C422D] rounded-full py-3.5 hover:bg-[#25573B] transition-all duration-300 uppercase mt-1 sm:mt-2 active:scale-[0.98] font-semibold cursor-pointer shadow-md shadow-[#1C422D]/10"
               >
-                {isSubmitting ? (
-                  <>
-                    <svg className="animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                    </svg>
-                    <span>Transmitting Inquiry...</span>
-                  </>
-                ) : (
-                  <span>Submit Inquiry</span>
-                )}
+                Submit Inquiry
               </button>
             </form>
           </div>
