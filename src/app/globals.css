@@ -94,12 +94,12 @@
   --color-champagne-glow: rgba(229, 209, 177, 0.25);
   --color-platinum: #E4E6E7;
 
-  /* Titles: Canela with high-fidelity Cormorant Garamond editorial serif fallback */
-  --font-canela: 'Canela', 'Canela Deck', 'Canela Text', var(--font-canela-fallback), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  /* Titles: Canela or Playfair Display with fallback */
+  --font-canela: 'Canela', 'Canela Deck', 'Canela Text', 'Playfair Display', var(--font-canela-fallback), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-display: var(--font-canela);
 
-  /* Body/Paragraphs: Söhne with high-fidelity Plus Jakarta Sans modern Swiss grotesque fallback */
-  --font-sohne: 'Söhne', 'Sohne', 'Soehne', var(--font-sohne-fallback), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Body/Paragraphs: Söhne or Neue Haas Grotesk with fallback */
+  --font-sohne: 'Söhne', 'Sohne', 'Neue Haas Grotesk', 'Helvetica Neue', Helvetica, Arial, var(--font-sohne-fallback), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: var(--font-sohne);
 
   /* Legacy aliases for backward compatibility */

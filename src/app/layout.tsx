@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 const bestigia = localFont({
@@ -9,14 +9,14 @@ const bestigia = localFont({
   display: "swap",
 });
 
-const canelaFallback = Cormorant_Garamond({
+const canelaFallback = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-canela-fallback",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
-const sohneFallback = Plus_Jakarta_Sans({
+const sohneFallback = Inter({
   subsets: ["latin"],
   variable: "--font-sohne-fallback",
   display: "swap",
