@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Manrope } from "next/font/google";
+import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 const bestigia = localFont({
@@ -9,9 +9,16 @@ const bestigia = localFont({
   display: "swap",
 });
 
-const manrope = Manrope({
+const canelaFallback = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-canela-fallback",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
+const sohneFallback = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sohne-fallback",
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
@@ -65,7 +72,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bestigia.variable} ${manrope.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${canelaFallback.variable} ${sohneFallback.variable} ${bestigia.variable} scroll-smooth`}
+    >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
       </head>

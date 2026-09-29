@@ -11,19 +11,6 @@ interface ProductionGalleryProps {
 
 const portfolioProjects: PortfolioProjectData[] = [
   {
-    title: "TECNO Camon 20 Launch",
-    meta: "Product Launch | Kigali, Rwanda |",
-    image: "/images/camon-20-launch.jpg",
-    media: [
-      {
-        type: "video",
-        src: "/videos/CAMON 20 LAUNCH.mp4",
-        caption: "Flagship Concert Stagecraft & Product Reveal Reel",
-        poster: "/images/camon-20-launch.jpg",
-      },
-    ],
-  },
-  {
     title: "Traditional Gusaba Ceremony",
     meta: "Traditional Ceremony | Kigali, Rwanda |",
     image: "/images/showcase-gusaba.webp",
@@ -42,19 +29,6 @@ const portfolioProjects: PortfolioProjectData[] = [
     ],
   },
   {
-    title: "TECNO Camon 19 Launch",
-    meta: "Stage & Lighting | Kigali, Rwanda |",
-    image: "/images/camon-19-stage.jpg",
-    media: [
-      {
-        type: "video",
-        src: "/videos/CAMON 19 LAUNCH.mp4",
-        caption: "Acoustic Engineering & Dynamic Concert Truss Rig",
-        poster: "/images/camon-19-stage.jpg",
-      },
-    ],
-  },
-  {
     title: "Bespoke Wedding Reception",
     meta: "Luxury Wedding | Kigali, Rwanda |",
     image: "/images/wedding-reception.jpg",
@@ -64,6 +38,49 @@ const portfolioProjects: PortfolioProjectData[] = [
         src: "/videos/WEEDING EVENT I.mp4",
         caption: "Couture Matrimonial Gala & Grand Reception",
         poster: "/images/wedding-reception.jpg",
+      },
+    ],
+  },
+  {
+    title: "Continental Summit Gala",
+    meta: "Executive Summit | Kigali, Rwanda |",
+    image: "/images/showcase-gala.webp",
+    media: [
+      {
+        type: "image",
+        src: "/images/showcase-gala.webp",
+        caption: "Presidential Gala Reception at Kigali Convention Centre",
+      },
+      {
+        type: "image",
+        src: "/images/hero-corporate.webp",
+        caption: "International Delegation Stage & Lighting Capabilities",
+      },
+    ],
+  },
+  {
+    title: "TECNO Camon 20 Launch",
+    meta: "Product Launch | Kigali, Rwanda |",
+    image: "/images/camon-20-launch.jpg",
+    media: [
+      {
+        type: "video",
+        src: "/videos/CAMON 20 LAUNCH.mp4",
+        caption: "Flagship Concert Stagecraft & Product Reveal Reel",
+        poster: "/images/camon-20-launch.jpg",
+      },
+    ],
+  },
+  {
+    title: "TECNO Camon 19 Launch",
+    meta: "Stage & Lighting | Kigali, Rwanda |",
+    image: "/images/camon-19-stage.jpg",
+    media: [
+      {
+        type: "video",
+        src: "/videos/CAMON 19 LAUNCH.mp4",
+        caption: "Acoustic Engineering & Dynamic Concert Truss Rig",
+        poster: "/images/camon-19-stage.jpg",
       },
     ],
   },
@@ -89,43 +106,14 @@ const portfolioProjects: PortfolioProjectData[] = [
       },
     ],
   },
-  {
-    title: "Continental Summit Gala",
-    meta: "Executive Summit | Kigali, Rwanda |",
-    image: "/images/showcase-gala.webp",
-    media: [
-      {
-        type: "image",
-        src: "/images/showcase-gala.webp",
-        caption: "Presidential Gala Reception at Kigali Convention Centre",
-      },
-      {
-        type: "image",
-        src: "/images/hero-corporate.webp",
-        caption: "International Delegation Stage & Lighting Capabilities",
-      },
-    ],
-  },
 ];
 
 // Aggregated Showcase for "View All Work" button
 const allWorkProject: PortfolioProjectData = {
   title: "MLU Event Highlights & Video Reels",
   meta: "Featured Productions | Kigali, Rwanda",
-  image: "/images/camon-20-launch.jpg",
+  image: "/images/showcase-gusaba.webp",
   media: [
-    {
-      type: "video",
-      src: "/videos/CAMON 20 LAUNCH.mp4",
-      caption: "TECNO Camon 20 Launch: Concert Stagecraft & Product Reveal Reel",
-      poster: "/images/camon-20-launch.jpg",
-    },
-    {
-      type: "video",
-      src: "/videos/CAMON 19 LAUNCH.mp4",
-      caption: "TECNO Camon 19 Launch: Keynote & Concert Truss Production",
-      poster: "/images/camon-19-stage.jpg",
-    },
     {
       type: "video",
       src: "/videos/WEEDING EVENT.mp4",
@@ -140,13 +128,25 @@ const allWorkProject: PortfolioProjectData = {
     },
     {
       type: "image",
-      src: "/images/SPARK 20 LAUNCH I.jpg",
-      caption: "TECNO Spark 20 Launch Experience & Stage Setup",
+      src: "/images/showcase-gala.webp",
+      caption: "Continental Summit Gala at Kigali Convention Centre",
+    },
+    {
+      type: "video",
+      src: "/videos/CAMON 20 LAUNCH.mp4",
+      caption: "TECNO Camon 20 Launch: Concert Stagecraft & Product Reveal Reel",
+      poster: "/images/camon-20-launch.jpg",
+    },
+    {
+      type: "video",
+      src: "/videos/CAMON 19 LAUNCH.mp4",
+      caption: "TECNO Camon 19 Launch: Keynote & Concert Truss Production",
+      poster: "/images/camon-19-stage.jpg",
     },
     {
       type: "image",
-      src: "/images/showcase-gala.webp",
-      caption: "Continental Summit Gala at Kigali Convention Centre",
+      src: "/images/SPARK 20 LAUNCH I.jpg",
+      caption: "TECNO Spark 20 Launch Experience & Stage Setup",
     },
   ],
 };

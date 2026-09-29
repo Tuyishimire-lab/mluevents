@@ -1,5 +1,86 @@
 @import "tailwindcss";
 
+/* ── Typography & Font Declarations ── */
+/* Local / Custom font bindings: if Canela or Söhne are installed on the device or added to public/fonts, they load first */
+@font-face {
+  font-family: 'Canela';
+  src: local('Canela'),
+       local('Canela-Regular'),
+       local('Canela Regular'),
+       url('/fonts/Canela-Regular.woff2') format('woff2'),
+       url('/fonts/Canela-Regular.otf') format('opentype'),
+       url('/fonts/Canela-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: local('Canela-Medium'),
+       local('Canela Medium'),
+       url('/fonts/Canela-Medium.woff2') format('woff2'),
+       url('/fonts/Canela-Medium.otf') format('opentype'),
+       url('/fonts/Canela-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Canela';
+  src: local('Canela-Bold'),
+       local('Canela Bold'),
+       url('/fonts/Canela-Bold.woff2') format('woff2'),
+       url('/fonts/Canela-Bold.otf') format('opentype'),
+       url('/fonts/Canela-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: local('Söhne'),
+       local('Sohne'),
+       local('Söhne Buch'),
+       local('Sohne Buch'),
+       url('/fonts/Sohne-Regular.woff2') format('woff2'),
+       url('/fonts/Sohne-Regular.otf') format('opentype'),
+       url('/fonts/Sohne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: local('Söhne Kraftig'),
+       local('Sohne Kraftig'),
+       local('Söhne Medium'),
+       local('Sohne Medium'),
+       url('/fonts/Sohne-Medium.woff2') format('woff2'),
+       url('/fonts/Sohne-Medium.otf') format('opentype'),
+       url('/fonts/Sohne-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: local('Söhne Halbfett'),
+       local('Sohne Halbfett'),
+       local('Söhne Bold'),
+       local('Sohne Bold'),
+       url('/fonts/Sohne-Bold.woff2') format('woff2'),
+       url('/fonts/Sohne-Bold.otf') format('opentype'),
+       url('/fonts/Sohne-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── Tailwind v4 Theme Tokens ── */
 @theme {
   --color-dark: #050708;
@@ -13,10 +94,17 @@
   --color-champagne-glow: rgba(229, 209, 177, 0.25);
   --color-platinum: #E4E6E7;
 
-  --font-sans: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-manrope: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-bestigia: var(--font-bestigia), Georgia, 'Times New Roman', serif;
-  --font-display: var(--font-bestigia), Georgia, 'Times New Roman', serif;
+  /* Titles: Canela with high-fidelity Cormorant Garamond editorial serif fallback */
+  --font-canela: 'Canela', 'Canela Deck', 'Canela Text', var(--font-canela-fallback), 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-display: var(--font-canela);
+
+  /* Body/Paragraphs: Söhne with high-fidelity Plus Jakarta Sans modern Swiss grotesque fallback */
+  --font-sohne: 'Söhne', 'Sohne', 'Soehne', var(--font-sohne-fallback), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-sohne);
+
+  /* Legacy aliases for backward compatibility */
+  --font-manrope: var(--font-sohne);
+  --font-bestigia: var(--font-canela);
 
   --animate-hero-fade: fadeInScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   @keyframes fadeInScale {
@@ -43,12 +131,12 @@
     scroll-behavior: smooth;
     background-color: #FFFFFF;
     color: #050708;
-    font-family: var(--font-sans);
+    font-family: var(--font-sohne);
   }
 
-  /* Headings & Navigation: BESTIGIA - Regular */
+  /* Headings & Navigation: Canela (Title Font) */
   h1, h2, h3, h4, h5, h6, nav {
-    font-family: var(--font-bestigia), Georgia, 'Times New Roman', serif;
+    font-family: var(--font-canela);
   }
 
   body {
@@ -63,15 +151,15 @@
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     touch-action: manipulation;
-    font-family: var(--font-sans);
+    font-family: var(--font-sohne);
   }
 }
 
 /* == Component Classes == */
 @layer components {
-  /* Display typography: all headings use BESTIGIA - Regular */
+  /* Display typography: all headings use Canela */
   .font-display {
-    font-family: var(--font-bestigia), Georgia, 'Times New Roman', serif;
+    font-family: var(--font-canela);
     letter-spacing: -0.01em;
   }
 
